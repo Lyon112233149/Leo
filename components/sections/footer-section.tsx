@@ -34,7 +34,7 @@ export function FooterSection() {
               aria-label="預約體態診斷"
             >
               <a
-                href="https://docs.google.com/forms/d/16ph6vlRDvGYOibW5Z4Pz5PaIbX35q6LjjOKLTo8Pkuo/edit"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -89,7 +89,7 @@ export function FooterSection() {
           aria-label="預約體態診斷"
         >
           <a
-            href="https://docs.google.com/forms/d/16ph6vlRDvGYOibW5Z4Pz5PaIbX35q6LjjOKLTo8Pkuo/edit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >
