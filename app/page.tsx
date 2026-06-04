@@ -9,6 +9,7 @@ import { ProgramSection } from "@/components/sections/program-section"
 import { PhilosophySection } from "@/components/sections/philosophy-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { FooterSection } from "@/components/sections/footer-section"
+import { BookingSection } from "@/components/sections/booking-section"
 import { Navigation } from "@/components/navigation"
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutSection />
       <VisualLogicSection />
       <ProgramSection />
+      <BookingSection />
       <PhilosophySection />
       <FAQSection />
       <FooterSection />

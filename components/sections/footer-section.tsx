@@ -34,7 +34,7 @@ export function FooterSection() {
               aria-label="預約體態診斷"
             >
               <a
-                href="/booking"
+                href="#booking"
               >
                 重新設計我的身體
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -86,13 +86,7 @@ export function FooterSection() {
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-3"
           aria-label="預約體態診斷"
         >
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            預約體態診斷
-          </a>
+          <a href="#booking">預約體態診斷</a>
         </Button>
       </div>
     </>

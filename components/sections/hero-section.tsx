@@ -69,7 +69,7 @@ export function HeroSection() {
               aria-label="預約體態診斷"
             >
               <a
-                href="/booking"
+                href="#booking"
               >
                 預約體態診斷
               </a>

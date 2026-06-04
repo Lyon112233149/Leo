@@ -57,7 +57,7 @@ export function Navigation() {
               className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               aria-label="預約體態診斷"
             >
-              <a href="/booking">預約諮詢</a>
+              <a href="#booking">預約諮詢</a>
             </Button>
           </div>
 
@@ -98,7 +98,7 @@ export function Navigation() {
                 className="mt-4 w-full max-w-xs bg-primary text-primary-foreground"
                 aria-label="預約體態診斷"
               >
-                <a href="/booking" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#booking" onClick={() => setIsMobileMenuOpen(false)}>
                   預約諮詢
                 </a>
               </Button>

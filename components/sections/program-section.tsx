@@ -51,6 +51,13 @@ const programs = [
   },
 ]
 
+function selectPlan(sessions: string) {
+  document.dispatchEvent(new CustomEvent("body-architect:plan", { detail: sessions }))
+  setTimeout(() => {
+    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, 50)
+}
+
 export function ProgramSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
@@ -126,18 +133,14 @@ export function ProgramSection() {
                     ))}
                   </ul>
                   <Button
-                    asChild
+                    onClick={() => selectPlan(program.sessions.replace(" 堂", ""))}
                     className={`w-full ${program.featured
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                       } transition-all duration-300`}
-                    aria-label={`了解${program.name}更多資訊`}
+                    aria-label={`預約${program.name}`}
                   >
-                    <a
-                      href="/booking"
-                    >
-                      了解更多
-                    </a>
+                    立即預約
                   </Button>
                 </CardContent>
               </Card>
