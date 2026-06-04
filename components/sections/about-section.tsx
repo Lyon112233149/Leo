@@ -58,7 +58,7 @@ export function AboutSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0"
+            className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0"
           >
             <div className="absolute inset-0 bg-primary/10 rounded-lg transform translate-x-4 translate-y-4" />
             <Image
