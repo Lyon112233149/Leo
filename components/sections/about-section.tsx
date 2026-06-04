@@ -132,13 +132,25 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* ── Specialties + Certifications ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
-          {/* Specialties */}
+        {/* ── Specialties: photo left + list right ── */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
+            className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-card border border-border"
+          >
+            <Image
+              src={galleryPhotos[3].src}
+              alt={galleryPhotos[3].alt}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.4 }}
           >
             <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Specialties</p>
             <h3 className="font-serif text-xl text-foreground mb-5">專業領域</h3>
@@ -151,12 +163,30 @@ export function AboutSection() {
               ))}
             </ul>
           </motion.div>
+        </div>
 
-          {/* Certifications */}
+        {/* ── Certifications: list left + photo right ── */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="md:order-2"
+          >
+            <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-card border border-border">
+              <Image
+                src={galleryPhotos[4].src}
+                alt={galleryPhotos[4].alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.45 }}
+            className="md:order-1"
           >
             <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Certifications</p>
             <h3 className="font-serif text-xl text-foreground mb-5">專業證照</h3>
@@ -170,31 +200,6 @@ export function AboutSection() {
             </ul>
           </motion.div>
         </div>
-
-        {/* ── Personal Photos ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 gap-3 md:gap-4 max-w-lg mx-auto lg:mx-0"
-        >
-          {[galleryPhotos[3], galleryPhotos[4]].map((photo, i) => (
-            <motion.div
-              key={photo.src}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.55 + i * 0.1 }}
-              className="relative aspect-[3/4] rounded-lg overflow-hidden bg-card border border-border"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* ── Training Gallery ── */}
         <motion.div
