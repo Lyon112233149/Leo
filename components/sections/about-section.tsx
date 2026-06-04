@@ -171,11 +171,36 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* ── Photo Gallery ── */}
+        {/* ── Personal Photos ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mt-16 grid grid-cols-2 gap-3 md:gap-4 max-w-lg mx-auto lg:mx-0"
+        >
+          {[galleryPhotos[3], galleryPhotos[4]].map((photo, i) => (
+            <motion.div
+              key={photo.src}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.55 + i * 0.1 }}
+              className="relative aspect-[3/4] rounded-lg overflow-hidden bg-card border border-border"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* ── Training Gallery ── */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
           className="mt-20"
         >
           <div className="text-center mb-8">
@@ -184,30 +209,14 @@ export function AboutSection() {
               訓練現場
             </h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {galleryPhotos.slice(0, 3).map((photo, i) => (
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
+            {[galleryPhotos[1], galleryPhotos[2]].map((photo, i) => (
               <motion.div
                 key={photo.src}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.55 + i * 0.1 }}
-                className="relative aspect-square rounded-lg overflow-hidden bg-card border border-border"
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </motion.div>
-            ))}
-            {galleryPhotos.slice(3).map((photo, i) => (
-              <motion.div
-                key={photo.src}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.85 + i * 0.1 }}
-                className="relative aspect-square rounded-lg overflow-hidden bg-card border border-border"
+                transition={{ duration: 0.6, delay: 0.6 + i * 0.1 }}
+                className="relative aspect-video rounded-lg overflow-hidden bg-card border border-border"
               >
                 <Image
                   src={photo.src}
