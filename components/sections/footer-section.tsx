@@ -34,9 +34,7 @@ export function FooterSection() {
               aria-label="預約體態診斷"
             >
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/booking"
               >
                 重新設計我的身體
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -56,7 +54,7 @@ export function FooterSection() {
                 <span className="font-semibold">Body</span> Architect
               </a>
               <p className="text-sm text-muted-foreground mt-1">
-                Shan Wealth · 身體建築師
+                陳俊傑 · 身體建築師
               </p>
             </div>
 

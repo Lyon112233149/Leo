@@ -134,9 +134,7 @@ export function ProgramSection() {
                     aria-label={`了解${program.name}更多資訊`}
                   >
                     <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/booking"
                     >
                       了解更多
                     </a>

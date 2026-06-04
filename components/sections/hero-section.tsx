@@ -11,8 +11,8 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/373877-34D3TDgX6Gb1KDoMvruvJktX9WbfPF.jpg"
-          alt="專業重訓教練指導學員進行訓練"
+          src="/media/photo-5.jpg"
+          alt="陳俊傑教練專業訓練指導"
           fill
           className="object-cover grayscale"
           priority
@@ -34,7 +34,7 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-sm uppercase tracking-[0.3em] text-primary mb-6"
           >
-            Shan Wealth · Body Architect
+            陳俊傑 · Body Architect
           </motion.p>
           
           <motion.h1
@@ -69,9 +69,7 @@ export function HeroSection() {
               aria-label="預約體態診斷"
             >
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/booking"
               >
                 預約體態診斷
               </a>
