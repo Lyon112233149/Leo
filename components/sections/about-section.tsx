@@ -161,8 +161,8 @@ export function AboutSection() {
           >
             <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-card border border-border">
               <Image
-                src={galleryPhotos[4].src}
-                alt={galleryPhotos[4].alt}
+                src="/media/photo-cert.jpg"
+                alt="陳俊傑教練專業證照"
                 fill
                 className="object-cover"
               />
