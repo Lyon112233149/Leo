@@ -9,13 +9,13 @@ import { Check, Star } from "lucide-react"
 
 const programs = [
   {
-    name: "結構覺知計畫",
+    name: "動作矯正計畫",
     sessions: "24 堂",
     subtitle: "入門首選",
-    description: "基礎整復與呼吸控制啟動",
+    description: "動作評估與基礎矯正建立",
     features: [
-      "體態評估與診斷",
-      "基礎整復調整",
+      "全身動作評估",
+      "基礎動作矯正",
       "呼吸模式建立",
       "核心啟動訓練",
     ],
@@ -66,7 +66,7 @@ export function ProgramSection() {
     <section
       id="programs"
       ref={ref}
-      className="py-24 md:py-32 bg-muted/30"
+      className="py-24 md:py-32 bg-background"
     >
       <div className="container mx-auto px-6">
         <motion.div

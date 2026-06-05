@@ -48,7 +48,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="about" ref={ref} className="py-24 md:py-32 bg-muted/30">
+    <section id="about" ref={ref} className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
 
         {/* ── Profile ── */}
@@ -132,38 +132,24 @@ export function AboutSection() {
           </motion.div>
         </div>
 
-        {/* ── Specialties: photo left + list right ── */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-card border border-border"
-          >
-            <Image
-              src={galleryPhotos[3].src}
-              alt={galleryPhotos[3].alt}
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Specialties</p>
-            <h3 className="font-serif text-xl text-foreground mb-5">專業領域</h3>
-            <ul className="space-y-2">
-              {specialties.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
+        {/* ── Specialties ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-20"
+        >
+          <p className="text-sm uppercase tracking-[0.2em] text-primary mb-3">Specialties</p>
+          <h3 className="font-serif text-xl text-foreground mb-6">專業領域</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-2">
+            {specialties.map((item) => (
+              <li key={item} className="flex items-center gap-3 text-sm text-muted-foreground">
+                <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
         {/* ── Certifications: list left + photo right ── */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">

@@ -12,7 +12,7 @@ export function EmpathySection() {
     <section
       id="empathy"
       ref={ref}
-      className="py-24 md:py-32 bg-muted/30"
+      className="py-24 md:py-32 bg-background"
     >
       <div className="container mx-auto px-6">
         <motion.div

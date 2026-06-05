@@ -14,7 +14,7 @@ const TIME_SLOTS = [
 ]
 
 const PLANS = [
-  { value: "24", sessions: "24", name: "結構覺知計畫", tier: "入門首選", desc: "體態評估診斷 · 基礎整復調整 · 呼吸模式建立 · 核心啟動訓練", featured: false },
+  { value: "24", sessions: "24", name: "動作矯正計畫", tier: "入門首選", desc: "全身動作評估 · 基礎動作矯正 · 呼吸模式建立 · 核心啟動訓練", featured: false },
   { value: "36", sessions: "36", name: "排列校正計畫", tier: "習慣養成", desc: "姿勢校正延伸 · 深層核心控制 · 動作模式建立 · 階段性追蹤", featured: false },
   { value: "48", sessions: "48", name: "體態重建計畫", tier: "黃金週期", desc: "完整體態矯正 · 進階皮拉提斯 · 核心抗阻訓練 · 動作優化 · 定期追蹤", featured: true },
   { value: "72", sessions: "72", name: "身體優化專案", tier: "運動醫學等級", desc: "全方位運動處方 · 高階重訓規劃 · 長期結構穩定 · 運動表現提升", featured: false },
@@ -76,7 +76,7 @@ export function BookingSection() {
     <section
       id="booking"
       ref={ref}
-      className="py-24 md:py-32 bg-muted/20"
+      className="py-24 md:py-32 bg-background"
     >
       <div className="container mx-auto px-6">
 

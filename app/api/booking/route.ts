@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 const NOTIFY_TO = "james112233149@gmail.com"
 
 const planLabels: Record<string, string> = {
-  "24": "結構覺知計畫（24 堂）· 入門首選",
+  "24": "動作矯正計畫（24 堂）· 入門首選",
   "36": "排列校正計畫（36 堂）· 習慣養成",
   "48": "體態重建計畫（48 堂）· 黃金週期 ★ 推薦",
   "72": "身體優化專案（72 堂）· 運動醫學等級",
