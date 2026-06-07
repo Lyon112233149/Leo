@@ -6,20 +6,18 @@ import Image from "next/image"
 import { Instagram, Award, CheckCircle2 } from "lucide-react"
 
 const specialties = [
-  "皮拉提斯體態雕塑",
   "肌力與體能訓練",
   "功能性動作矯正",
+  "人體邏輯架構優化",
   "運動傷害預防與恢復",
   "整復推拿與筋膜放鬆",
+  "身體病徵問題評估",
   "銀髮族健康促進",
   "健康管理與營養規劃",
-  "房地產資產配置諮詢",
 ]
 
 const certifications = [
-  "AFAA-PFT 國際私人教練",
-  "Power Pilates Mat 墊上皮拉提斯",
-  "Power Pilates Reformer 器械皮拉提斯",
+  "私人教練認證",
   "ISCA 運動營養專家",
   "FTS 功能性動作矯正專家",
   "中華民國美式整復證照",
@@ -29,11 +27,8 @@ const certifications = [
 ]
 
 const galleryPhotos = [
-  { src: "/media/photo-1.jpg", alt: "陳俊傑教練訓練實況" },
-  { src: "/media/photo-2.jpg", alt: "皮拉提斯教學" },
-  { src: "/media/photo-3.jpg", alt: "體態矯正指導" },
-  { src: "/media/photo-4.jpg", alt: "重訓教學" },
-  { src: "/media/photo-5.jpg", alt: "專業訓練指導" },
+  { src: "/media/venue-1.jpg", alt: "訓練場館實況" },
+  { src: "/media/venue-2.jpg", alt: "專業訓練環境" },
 ]
 
 const trainingVideos = [
@@ -62,7 +57,7 @@ export function AboutSection() {
           >
             <div className="absolute inset-0 bg-primary/10 rounded-lg transform translate-x-4 translate-y-4" />
             <Image
-              src="/media/photo-1.jpg"
+              src="/media/photo-profile.jpg"
               alt="陳俊傑教練專業形象照"
               fill
               className="object-cover rounded-lg relative z-10"
@@ -89,7 +84,7 @@ export function AboutSection() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {["體適能講師", "皮拉提斯教練", "運動健康顧問"].map((tag) => (
+              {["體適能講師", "運動健康顧問", "整復推拿師"].map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 text-xs rounded-full border border-primary/30 text-primary bg-primary/5"
@@ -101,13 +96,10 @@ export function AboutSection() {
 
             <div className="space-y-3 text-muted-foreground leading-relaxed">
               <p>
-                跆拳道運動員出身，畢業於運動健康科學系（運動醫學），擁有私人教練、皮拉提斯、運動營養、功能性動作矯正及整復推拿等多項專業認證。
+                跆拳道運動員出身，畢業於運動健康科學系（運動醫學），擁有私人教練、運動營養、功能性動作矯正及整復推拿等多項專業認證。
               </p>
               <p>
                 多年來專注於體態調整、疼痛改善、肌力與體能提升，協助學員建立健康、自信且充滿活力的生活方式。
-              </p>
-              <p>
-                現任健身房教練主管，同時投入房地產顧問領域，致力於提供客戶健康管理與資產規劃的雙重價值，打造更穩健的人生藍圖。
               </p>
             </div>
 
@@ -201,7 +193,7 @@ export function AboutSection() {
             </h3>
           </div>
           <div className="grid grid-cols-2 gap-3 md:gap-4">
-            {[galleryPhotos[1], galleryPhotos[2]].map((photo, i) => (
+            {galleryPhotos.map((photo, i) => (
               <motion.div
                 key={photo.src}
                 initial={{ opacity: 0, scale: 0.95 }}

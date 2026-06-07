@@ -43,18 +43,20 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground mb-6 text-balance"
           >
-            我們的身體架構
+            身體架構
             <br />
-            來自於排列出了問題
+            來自於身體排列的改善
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto"
           >
-            皮拉提斯延伸重訓的運動模式，探討底層邏輯的身體改善
+            肌力體能與運動表現優化轉換生活模式
+            <br />
+            探討身體的改善
           </motion.p>
           
           <motion.div

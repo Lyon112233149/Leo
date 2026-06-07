@@ -6,11 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 const NOTIFY_TO = "james112233149@gmail.com"
 
 const planLabels: Record<string, string> = {
-  "24": "動作矯正計畫（24 堂）· 入門首選",
-  "36": "排列校正計畫（36 堂）· 習慣養成",
-  "48": "體態重建計畫（48 堂）· 黃金週期 ★ 推薦",
-  "72": "身體優化專案（72 堂）· 運動醫學等級",
-  "108": "終身結構管理（108 堂）· 完整蛻變",
+  "初階體驗": "初階體驗 · 入門評估",
+  "體態重建": "體態重建 · 黃金週期 ★ 推薦",
+  "身體優化": "身體優化 · 進階訓練",
 }
 
 export async function POST(request: Request) {

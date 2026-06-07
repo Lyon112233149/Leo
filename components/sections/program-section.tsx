@@ -5,54 +5,31 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Check, Star } from "lucide-react"
+import { Star } from "lucide-react"
 
 const programs = [
   {
-    name: "動作矯正計畫",
-    sessions: "24 堂",
-    subtitle: "入門首選",
-    description: "動作評估與基礎矯正建立",
-    features: [
-      "全身動作評估",
-      "基礎動作矯正",
-      "呼吸模式建立",
-      "核心啟動訓練",
-    ],
+    name: "初階體驗",
+    subtitle: "入門評估",
+    description: "首次體態診斷與動作評估，了解自身身體結構現況，制定初步訓練方向。",
     featured: false,
   },
   {
-    name: "體態重建計畫",
-    sessions: "48 堂",
+    name: "體態重建",
     subtitle: "黃金週期",
-    description: "姿勢矯正與核心抗阻強化",
-    features: [
-      "完整體態矯正",
-      "進階皮拉提斯",
-      "核心抗阻訓練",
-      "動作模式優化",
-      "定期追蹤調整",
-    ],
+    description: "系統性姿勢矯正與核心強化，搭配定期追蹤調整，打造穩定的身體基礎。",
     featured: true,
   },
   {
-    name: "身體優化專案",
-    sessions: "72 堂",
-    subtitle: "運動醫學等級",
-    description: "高階訓練模式與長期結構穩定",
-    features: [
-      "全方位運動處方",
-      "高階重訓規劃",
-      "長期結構穩定",
-      "運動表現提升",
-      "終身健康管理",
-    ],
+    name: "身體優化",
+    subtitle: "進階訓練",
+    description: "高階肌力規劃與運動表現提升，長期維持結構穩定，全面提升生活品質。",
     featured: false,
   },
 ]
 
-function selectPlan(sessions: string) {
-  document.dispatchEvent(new CustomEvent("body-architect:plan", { detail: sessions }))
+function selectPlan(name: string) {
+  document.dispatchEvent(new CustomEvent("body-architect:plan", { detail: name }))
   setTimeout(() => {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" })
   }, 50)
@@ -82,7 +59,7 @@ export function ProgramSection() {
             專案計畫
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            根據您的目標與狀況，選擇最適合的訓練方案
+            根據你的目標與身體狀況，選擇最適合的訓練方向，預約諮詢後量身規劃
           </p>
         </motion.div>
 
@@ -110,37 +87,26 @@ export function ProgramSection() {
                   </div>
                 )}
                 <CardHeader className="text-center pb-4">
-                  <CardDescription className="text-primary font-medium mb-1">
-                    {program.sessions}
-                  </CardDescription>
                   <CardTitle className="font-serif text-2xl tracking-tight text-foreground">
                     {program.name}
                   </CardTitle>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <CardDescription className="text-primary font-medium mt-1">
                     {program.subtitle}
-                  </p>
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-center text-muted-foreground text-sm">
+                  <p className="text-center text-muted-foreground text-sm leading-relaxed">
                     {program.description}
                   </p>
-                  <ul className="space-y-3">
-                    {program.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm">
-                        <Check className="w-4 h-4 text-primary shrink-0" />
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                   <Button
-                    onClick={() => selectPlan(program.sessions.replace(" 堂", ""))}
+                    onClick={() => selectPlan(program.name)}
                     className={`w-full ${program.featured
                         ? "bg-primary text-primary-foreground hover:bg-primary/90"
                         : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                       } transition-all duration-300`}
                     aria-label={`預約${program.name}`}
                   >
-                    立即預約
+                    預約體驗
                   </Button>
                 </CardContent>
               </Card>
@@ -174,43 +140,26 @@ export function ProgramSection() {
                     </div>
                   )}
                   <CardHeader className="text-center pb-4">
-                    <CardDescription className="text-primary font-medium mb-1">
-                      {program.sessions}
-                    </CardDescription>
                     <CardTitle className="font-serif text-xl tracking-tight text-foreground">
                       {program.name}
                     </CardTitle>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <CardDescription className="text-primary font-medium mt-1">
                       {program.subtitle}
-                    </p>
+                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-center text-muted-foreground text-sm">
+                    <p className="text-center text-muted-foreground text-sm leading-relaxed">
                       {program.description}
                     </p>
-                    <ul className="space-y-2">
-                      {program.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm">
-                          <Check className="w-4 h-4 text-primary shrink-0" />
-                          <span className="text-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
                     <Button
-                      asChild
+                      onClick={() => selectPlan(program.name)}
                       className={`w-full ${program.featured
                           ? "bg-primary text-primary-foreground"
                           : "bg-secondary text-secondary-foreground"
                         }`}
-                      aria-label={`了解${program.name}更多資訊`}
+                      aria-label={`預約${program.name}`}
                     >
-                      <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfk8hHXqVY3UpPSwHL2eKHTRlsASJZML6F00ZpWO2AiNlOCCg/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        了解更多
-                      </a>
+                      預約體驗
                     </Button>
                   </CardContent>
                 </Card>

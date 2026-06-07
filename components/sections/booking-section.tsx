@@ -14,11 +14,9 @@ const TIME_SLOTS = [
 ]
 
 const PLANS = [
-  { value: "24", sessions: "24", name: "動作矯正計畫", tier: "入門首選", desc: "全身動作評估 · 基礎動作矯正 · 呼吸模式建立 · 核心啟動訓練", featured: false },
-  { value: "36", sessions: "36", name: "排列校正計畫", tier: "習慣養成", desc: "姿勢校正延伸 · 深層核心控制 · 動作模式建立 · 階段性追蹤", featured: false },
-  { value: "48", sessions: "48", name: "體態重建計畫", tier: "黃金週期", desc: "完整體態矯正 · 進階皮拉提斯 · 核心抗阻訓練 · 動作優化 · 定期追蹤", featured: true },
-  { value: "72", sessions: "72", name: "身體優化專案", tier: "運動醫學等級", desc: "全方位運動處方 · 高階重訓規劃 · 長期結構穩定 · 運動表現提升", featured: false },
-  { value: "108", sessions: "108", name: "終身結構管理", tier: "完整蛻變", desc: "深度體態重塑 · 客製化處方 · 長期穩定維持 · 終身健康管理", featured: false },
+  { value: "初階體驗", name: "初階體驗", tier: "入門評估", desc: "首次體態診斷與動作評估，了解身體結構現況，制定初步訓練方向", featured: false },
+  { value: "體態重建", name: "體態重建", tier: "黃金週期", desc: "系統性姿勢矯正與核心強化，搭配定期追蹤調整，打造穩定身體基礎", featured: true },
+  { value: "身體優化", name: "身體優化", tier: "進階訓練", desc: "高階肌力規劃與運動表現提升，長期維持結構穩定，全面提升生活品質", featured: false },
 ]
 
 type FormState = {
@@ -113,8 +111,8 @@ export function BookingSection() {
               <h3 className="font-serif text-2xl text-foreground mb-3">預約已送出</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {form.name} 你好，已收到你的
-                <span className="text-foreground font-medium">「{selectedPlan?.name}（{form.plan} 堂）」</span>
-                方案預約。
+                <span className="text-foreground font-medium">「{selectedPlan?.name}」</span>
+                諮詢預約。
                 <br />我們會盡快以電話與你確認，安排第一次體態診斷。
               </p>
             </div>
@@ -189,13 +187,9 @@ export function BookingSection() {
                         {/* Content */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-2 flex-wrap">
-                            <div className="flex items-baseline gap-2">
-                              <span className={`font-serif text-2xl leading-none transition-colors ${active ? "text-primary" : "text-foreground"}`}>
-                                {plan.sessions}
-                              </span>
-                              <span className="text-xs text-muted-foreground">堂</span>
-                              <span className="font-medium text-sm text-foreground">{plan.name}</span>
-                            </div>
+                            <span className={`font-serif text-lg leading-none transition-colors ${active ? "text-primary" : "text-foreground"}`}>
+                              {plan.name}
+                            </span>
                             <div className="flex items-center gap-2">
                               <span className="text-xs text-muted-foreground italic">{plan.tier}</span>
                               {plan.featured && (
